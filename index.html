@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Financial Firm Name Normalizer</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Third-party libraries for CSV parsing and fuzzy matching -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.4.1/papaparse.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/7.0.0/fuse.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Financial Firm Name Normalizer</h1>
+            <p>Upload a CSV file to standardize company names based on our AI-powered knowledge base.</p>
+        </header>
+
+        <main>
+            <div class="controls">
+                <div class="step">
+                    <h2>Step 1: Upload your CSV</h2>
+                    <input type="file" id="csvFileInput" accept=".csv">
+                </div>
+                
+                <div class="step" id="columnSelectorContainer" style="display:none;">
+                    <h2>Step 2: Select the Firm Name Column</h2>
+                    <select id="columnSelector"></select>
+                    <button id="processButton">Normalize Names</button>
+                </div>
+            </div>
+
+            <div id="status" class="status-container"></div>
+
+            <div id="resultsContainer" style="display:none;">
+                <div class="results-header">
+                    <h2>Normalization Results</h2>
+                    <button id="downloadButton">Download Results (CSV)</button>
+                </div>
+                <div id="results" class="results-view">
+                    <!-- Results will be dynamically inserted here -->
+                </div>
+            </div>
+        </main>
+
+        <footer>
+            <p>Powered by a client-side AI engine. All processing is done securely in your browser.</p>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
